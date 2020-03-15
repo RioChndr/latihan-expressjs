@@ -4,7 +4,7 @@ var db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password : '',
-    database:'db1'
+    database:'db_openclass'
 });
 
 db.connect(function(err){
