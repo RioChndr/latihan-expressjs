@@ -13,12 +13,15 @@ router.get('/', function(req, res, next) {
   });
 });
 
+/* Proses pengiriman data ke database */
 router.post('/kirim_data', function(req, res, next){
-  var nama = req.body.nama;
+  var nama = req.body.nama; //ambil data yg di input
   console.log(nama);
-  var query = "insert into users (nama) values ('"+nama+"')";
+  var query = "insert into users (nama) values ('"+nama+"')"; //query untuk memasukkan data
   db.query(query, function(error, hasil){
     if(error) throw error;
+
+    //pindah ke halaman home
     res.redirect("/");
   })
 })
