@@ -15,7 +15,7 @@
     </form>
     <ul>
       <% data.forEach(function(user){ %>
-        <li><%= user.nama %></li>
+        <li><%= user.nama %> <a href='/hapus/<%= user.id %>'>[x]</a></li>
       <% }) %>
     </ul>
   </body>

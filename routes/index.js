@@ -26,6 +26,15 @@ router.post('/kirim_data', function(req, res, next){
   })
 })
 
+/* Hapus data */
+router.get('/hapus/:userId', function(req, res, next){
+  var userId = req.param('userId');
+  var query = `delete from users where id = '${userId}'`;
+  db.query(query, function(error, hasil){
+    if(error) throw error;
+    res.redirect('/');
+  })
+})
 
 
 module.exports = router;
